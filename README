@@ -10,7 +10,11 @@ For details on SRC, please refer to "Simple Regenerating Codes: Network Coding f
 To obtain complete jerasure library,http://web.eecs.utk.edu/~plank/plank/papers/CS-08-627.html. This library is released under GNU LGPL v2.1 license. 
 
 This README provides directions on how to install and run this application. This also includes what is to be expected from the application.  
+<<<<<<< HEAD
 HOW TO INSTALL---------------------------------------------------	
+=======
+HOW TO INSTALL---------------------------------------------------   
+>>>>>>> e78624579d22d21341673bcd53c945697d62ffa0
 1. To compile SRC applications, Run 'make' in the parent directory of the Simple-Regenerating-codes. It should compile files without errors but may be with some warnings.   
 2. Enter SRC_file directory and run 'make' again. This should again compile files without error but may be with few warnings.
 
@@ -35,4 +39,8 @@ file that was encoded. Third one is SRC_repair that would repair SRC encoded sys
    Usage:'SRC_repair <name of the file that was encoded using SRC>'
    
 Note: The MDS code used in this implementation of SRC is Vandermonde Reed Solomon Code. However any (n,k) MDS code can be used instead of RS code.
+<<<<<<< HEAD
 This package is still under development. Various other versions of SRC will be made available.                 
+=======
+This package is still under development. Various other versions of SRC will be made available.                 
+>>>>>>> e78624579d22d21341673bcd53c945697d62ffa0
