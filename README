@@ -1,0 +1,32 @@
+This package includes Simple Regenerating Code applications written using jerasure library. This package also includes some part of jerasure library needed for SRC
+implementation. Source files concerning SRC have been released under GNU LGPL v3.0. 
+For details on SRC, please refer to "Simple Regenerating Codes: Network Coding for Cloud Storage by D. S. Papailiopoulos, J. Luo, A. G. Dimakis, C. Huang, and J. Li ".
+To obtain complete jerasure library,http://web.eecs.utk.edu/~plank/plank/papers/CS-08-627.html. This library is released under GNU LGPL v2.1 license. 
+
+This README provides directions on how to install and run this application. This also includes what is to be expected from the application.  
+HOW TO INSTALL---------------------------------------------------	
+1. To compile SRC applications, Run 'make' in the parent directory of the Simple-Regenerating-codes. It should compile file without errors but may be with some warnings.   
+2. Enter SRC_file directory and run 'make' again. This should again compile without error but may be with few warnings.
+
+HOW TO RUN---------------------------------------------------------
+There are three programs for SRC included in the distribution. One is SRC encoder that encodes any file given as an input. Second one is SRC_decoder that outputs the original 
+file that was encoded. Third one is SRC_repair that would repair SRC encoded system.
+
+1. SRC program encodes input file using SRC. 
+   Usage:'SRC <name of the file to be encoded> <k> <n> <f> <field size> <buffersize>'. n, k, f are SRC code parameters.
+   This would generate 'n' encoded files using SRC and a metafile with all the details needed for repair and decoder applications.
+
+2. This program decodes SRC encoded files when all encoded files are available or when we lose upto (n-k) files.
+   a. When there is no file erasure, it simply locates the chunks in the files that have systematic data segments and writes them to file	
+   b. if there are file erasures, it would select any 'k' encoded files out of the available encoded files and thereon, uses Decode_by_reed_sol() function to decode.  
+   Usage:'SRC_decoder <name of the file that was encoded using SRC>'
+
+3. This program repairs SRC system when upto (n-k) encoded files are lost.
+   It has two specialized repair functions:
+   a. Repair function when we lose only one file storing the data. It uses xor function from jerasure library to Recover file.   
+   b. Recover function which is used when lose more than one but upto (n-k) encoded files. It uses decoding function from jerasure libaray as well 
+      as xor function.	
+   Usage:'SRC_repair <name of the file that was encoded using SRC>'
+   
+Note: The MDS code used in this implementation of SRC is Vandermonde Reed Solomon Code. However any (n,k) MDS code can be used instead of RS code.
+This package is still under development. Various other versions of SRC will be made available.                 
