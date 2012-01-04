@@ -1,3 +1,9 @@
+Sarabjot Singh Khangura
+Electrical Engineering Department
+University of Southern California
+Los Angeles, CA 90007
+email:skhangur@usc.edu,khangurasarabjot@gmail.com
+
 This package includes Simple Regenerating Code applications written using jerasure library. This package also includes some part of jerasure library needed for SRC
 implementation. Source files concerning SRC have been released under GNU LGPL v3.0. 
 For details on SRC, please refer to "Simple Regenerating Codes: Network Coding for Cloud Storage by D. S. Papailiopoulos, J. Luo, A. G. Dimakis, C. Huang, and J. Li ".
